@@ -1,8 +1,147 @@
+@font-face {
+  font-family: "Bungee";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/Bungee/Bungee-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/Catamaran/Catamaran-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Catamaran-Bold";
+  font-style: bold;
+  font-weight: 700;
+  src: url("./assets/fonts/Catamaran/Catamaran-Bold.ttf") format("truetype");
+}
+
+$black: #232828;
+$purple: #834688;
+$white: #ffffff;
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70rem) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 64rem) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 50rem) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (min-width: 37.5rem) {
+      @content;
+    }
+  }
+}
+
 .App {
-  text-align: center;
+  align-items: flex-start;
+  display: flex;
 }
 
 .header {
-  &__item {
+  background-color: $black;
+  display: flex;
+  flex: 1;
+  position: fixed;
+  width: 100%;
+
+  @include breakpoint(laptop) {
+    max-height: 5rem;
   }
+
+  .title {
+    align-items: center;
+    background-color: $purple;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    font-family: Bungee;
+    flex: 2;
+
+    &__icon {
+      align-self: flex-start;
+      flex: 1;
+      height: 90%;
+      transform: rotate(15deg);
+    }
+
+    &__text {
+      text-align: center;
+      vertical-align: middle;
+
+      @include breakpoint(laptop) {
+        flex: 3;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .splatter {
+    flex: 1;
+
+    @include breakpoint(laptop) {
+      flex: 3;
+    }
+
+    &__cover {
+      background-color: $purple;
+      height: 100%;
+      position: absolute;
+      width: 1.75rem;
+
+      @include breakpoint(laptop) {
+        width: 2.5rem;
+      }
+    }
+
+    &__image {
+      position: relative;
+
+      @include breakpoint(laptop) {
+        height: 100%;
+      }
+    }
+  }
+
+  .nav {
+    color: $white;
+    display: flex;
+    flex: 3;
+    font-family: Catamaran-Bold;
+    font-size: 0.5rem;
+
+    @include breakpoint(laptop) {
+      font-size: 1rem;
+    }
+
+    &__item {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      height: 100%;
+      justify-content: center;
+
+      &--active {
+        background-color: $purple;
+      }
+    }
+
+    &__text {
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}
+
+.welcome {
 }
