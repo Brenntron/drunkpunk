@@ -30,7 +30,7 @@ class Header extends Component {
           {displayIcon ? (
             <img className="title__icon" src={BeerMug} alt="" />
           ) : null}
-          <div className="title__text">PUNK OUT BREWS</div>
+          <header className="title__text">PUNK OUT BREWS</header>
         </div>
         <div className="splatter">
           <div className="splatter__cover"></div>

@@ -19,6 +19,13 @@
   src: url("./assets/fonts/Catamaran/Catamaran-Bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Catamaran-Thin";
+  font-style: thin;
+  font-weight: 300;
+  src: url("./assets/fonts/Catamaran/Catamaran-Thin.ttf") format("truetype");
+}
+
 $black: #232828;
 $purple: #834688;
 $white: #ffffff;
@@ -144,4 +151,157 @@ $white: #ffffff;
 }
 
 .welcome {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 5rem 0 0;
+
+  @include breakpoint(laptop) {
+    flex-direction: row;
+    margin: 7rem 0 0;
+  }
+
+  .description {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0 2rem 2rem;
+
+    @include breakpoint(laptop) {
+      flex: 2;
+      padding: 0 0 0 2rem;
+    }
+
+    &__title {
+      flex: 1;
+      font-family: Bungee;
+
+      @include breakpoint(laptop) {
+        font-size: 2rem;
+      }
+    }
+
+    &__prompt {
+      border-left: 0.5rem solid $purple;
+      flex: 1;
+      font-family: Catamaran;
+      font-size: 0.25rem;
+      padding: 0 0 0 0.25rem;
+
+      @include breakpoint(laptop) {
+        font-size: 1rem;
+        padding: 0 0 0 1rem;
+      }
+    }
+
+    &__tag {
+      color: $purple;
+      display: flex;
+      flex: 1;
+      font-family: Bungee;
+      font-size: 0.25rem;
+      justify-content: center;
+      text-align: right;
+
+      @include breakpoint(laptop) {
+        font-size: 1rem;
+      }
+    }
+
+    &__tagText {
+      flex: 1 0 95%;
+      height: 1rem;
+
+      @include breakpoint(laptop) {
+        flex: none;
+      }
+    }
+
+    &__hand {
+      align-self: flex-start;
+      flex: 1 0 5%;
+      height: 1rem;
+      margin: 0.1rem 10rem 0 0; /* This is not ideal... */
+
+      @include breakpoint(laptop) {
+        flex: none;
+        height: 2rem;
+        margin: 0.5rem 0 0 0.2rem;
+      }
+    }
+  }
+
+  .mailingList {
+    background-color: $purple;
+    border-radius: 5px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0 2rem 0 2rem;
+
+    &__title {
+      background-color: $black;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      color: $white;
+      font-family: Bungee;
+      font-size: 0.75rem;
+      text-align: center;
+
+      @include breakpoint(laptop) {
+        font-size: 1rem;
+        padding: 1rem 0;
+      }
+    }
+
+    &__mailIcon {
+      height: 2rem;
+
+      @include breakpoint(laptop) {
+        margin: 0.5rem 0;
+      }
+    }
+
+    &__prompt {
+      color: $white;
+      font-family: Catamaran-Bold;
+      font-size: 0.5rem;
+      margin: 0.5rem 1.5rem;
+
+      @include breakpoint(laptop) {
+        font-size: 0.75rem;
+        margin: 0 1.5rem 1rem;
+      }
+    }
+
+    &__form {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
+    &__input {
+      flex: 1;
+      width: 85%;
+
+      @include breakpoint(laptop) {
+        margin: 0.5rem 0 1rem;
+      }
+    }
+
+    &__button {
+      background-color: $black;
+      border: 0px solid transparent;
+      color: $white;
+      flex: 1;
+      font-family: Catamaran-Bold;
+      margin: 0.5rem 0;
+
+      @include breakpoint(laptop) {
+        margin: 0.5rem 0 1.5rem;
+        width: 7rem;
+      }
+    }
+  }
 }
