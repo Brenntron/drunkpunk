@@ -3,16 +3,28 @@ module.exports = {
     browser: true,
     es2020: true,
   },
-  extends: ["plugin:react/recommended", "prettier"],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 11,
-    sourceType: "module",
-  },
-  plugins: ["react", "prettier"],
+  extends: [
+    "react-app",
+    "eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/react",
+  ],
+  parser: "babel-eslint",
+  plugins: ["babel", "react", "prettier"],
   rules: {
-    "prettier/prettier": "error",
+    quotes: ["error", "single"],
+    "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0,
+    "no-console": process.env.NODE_ENV === "production" ? 2 : 0,
+    "babel/no-unused-expressions": "error",
+    "no-unused-expressions": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        singleQuote: true,
+        semi: false,
+        trailingComma: "all",
+        jsxBracketSameLine: true,
+      },
+    ],
   },
 };

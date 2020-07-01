@@ -21,21 +21,21 @@ function Welcome() {
           <img src={rocknrollHand} className="description__hand" alt="" />
         </div>
       </div>
-      <div className="mailingList">
-        <header className="mailingList__title">JOIN OUR MAILING LIST</header>
-        <img src={mail} className="mailingList__mailIcon" alt="" />
-        <p className="mailingList__prompt">
+      <div className="mailing-list">
+        <header className="mailing-list__title">JOIN OUR MAILING LIST</header>
+        <img src={mail} className="mailing-list__mailIcon" alt="" />
+        <p className="mailing-list__prompt">
           Sign up and we'll send you info about exclusive beer premieres,
           festivals we'll be at, and special promotions!
         </p>
-        <form className="mailingList__form">
+        <form className="mailing-list__form">
           <input
-            className="mailingList__input"
+            className="mailing-list__input"
             type="text"
             placeholder="beerafficionado@rockstar.com"
           />
           <input
-            className="mailingList__button"
+            className="mailing-list__button"
             type="submit"
             value="Heck Yes!"
           />
