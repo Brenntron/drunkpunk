@@ -111,6 +111,7 @@ function SetList() {
         <div className="filter-menu">
           <header className="filter-menu__title">FLAVOR NOTES</header>
           <Checkbox.Group options={flavorOptions} onChange={handleOnChange} />
+          <header className="filter-menu__slider-header">IBU</header>
           <form className="filter-menu__slider-form">
             <InputRange
               maxValue={120}
@@ -118,6 +119,17 @@ function SetList() {
               onChange={(value) => setIbu(value)}
               step={1}
               value={Ibu}
+            />
+          </form>
+          <header className="filter-menu__slider-header">ABU</header>
+          <form className="filter-menu__slider-form">
+            <InputRange
+              formatLabel={(value) => `${value}%`}
+              maxValue={13}
+              minValue={0}
+              onChange={(value) => setAbu(value)}
+              step={1}
+              value={Abu}
             />
           </form>
         </div>
